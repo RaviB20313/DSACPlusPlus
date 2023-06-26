@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstring>
+
 using namespace std;
 
 char *mystrtok(char *str,char delim){

@@ -1,10 +1,12 @@
+//tokenizing a string denotes splitting a string with respect to some delimiter(s).
+//input: "today is a sunny day"
+//output: "today","is","a","sunny","day"
+
 #include<iostream>
 #include<sstream>
 #include<vector>
 #include<cstring>
 using namespace std;
-
-
 int main(){
 
 	string input;
@@ -25,10 +27,5 @@ int main(){
 	for(auto token:tokens){
 		cout<<token<<",";
 	}
-
-
-
-
-
 	return 0;
 }
