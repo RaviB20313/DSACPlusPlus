@@ -19,7 +19,7 @@ class Trie{
     public:
     TrieNode* root;
     Trie(){
-        root= new TrieNode('z');
+        root= new TrieNode('/0');
     }
     void insertUtil(TrieNode* root,string word){
         if(word.length()==0){
