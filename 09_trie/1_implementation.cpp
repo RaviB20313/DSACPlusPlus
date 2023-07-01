@@ -61,6 +61,24 @@ class Trie{
     bool search(string word){
         return searchutil(root,word);
     }
+    void removeutil(TrieNode* root, string s){
+        if(s.length()==0){
+            root->isTerminal=false;
+        }
+        int index = s[0]-'A';
+        TrieNode* child;
+        if(root->children[index] !=NULL){
+            child = root->children[index];
+        }
+        else{
+            return;
+        }
+        removeutil(child,s.substr(1));
+    }
+    void remove(string s){
+        removeutil(root,s);
+        return;
+    }
 
 };
 
@@ -70,6 +88,9 @@ int main(){
     t.insertWord("TIM");
     t.insertWord("AXXX");
 
-    cout<<t.search("TIM");
+    cout<<t.search("TIM")<<endl;
+    t.remove("TIM");
+    cout<<t.search("TIM")<<endl;
+
     return 0;
 }
