@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 int getIthBit(int n,int i){
-    int mask=mask<<i;
+    int mask=1;
+    mask=mask<<i;
     return (n&mask)>0 ?1:0;
 }
 int main(){
