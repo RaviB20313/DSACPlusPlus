@@ -1,3 +1,4 @@
+// minimum coin 
 #include <bits/stdc++.h>
 using namespace std;
 int solve_top_down(vector<int> &num,vector<int> &dp,int x){
@@ -22,22 +23,26 @@ int solve_top_down(vector<int> &num,vector<int> &dp,int x){
 
 
 }
+int solve_bottom_up(vector<int> &num, int x){
+    int n=num.size();
+    vector<int> dp(x+1,INT_MAX);
+    dp[0]=0;
+    for(int i=1;i<=x;i++){
+        for(int j=0;j<n;j++){
+            if(i-num[j] >=0 && dp[i-num[j]] != INT_MAX ){
+                dp[i]=min(dp[i],dp[i-num[j]]+1);    
+            }
+        }
+    }
+    if(dp[x]==INT_MAX){
+        return -1;
+    }
+    return dp[x];
+}
 int minimumElements(vector<int> &num, int x)
 {
-    // Write your code here.
-    // int n=num.size();
-    // vector<int> dp(x+1,INT_MAX);
-    // dp[0]=0;
-    // for(int i=1;i<=x;i++){
-    //     for(int j=0;j<n;j++){
-    //         if(i-num[j] >=0 && dp[i-num[j]] != INT_MAX ){
-    //             dp[i]=min(dp[i],dp[i-num[j]]+1);    
-    //         }
-    //     }
-    // }
-    // if(dp[x]==INT_MAX){
-    //     return -1;
-    // }
-    // return dp[x];
+    //top_down
+    vector<int> dp(x+1,-1);
+    return solve_top_down(num,dp,x);
     
 }
