@@ -37,6 +37,3 @@ int countDistinctWays(int n) {
     //bottom-up
     return solve_bottom_up(n);
 }
-int main(){
-    return 0;
-}
