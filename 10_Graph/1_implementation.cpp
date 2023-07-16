@@ -26,8 +26,6 @@ int main(){
     g.addedge(1,4);
     g.addedge(2,5);
     g.addedge(2,6);
-
     g.printadj();
-
     return 0;
 }
